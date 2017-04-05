@@ -3,6 +3,7 @@ package sddtc.oauth2.resource.controller;
 import com.google.gson.Gson;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -17,7 +18,8 @@ public class DataCreatorController {
     private Gson gson = new Gson();
 
     @RequestMapping("/data")
-    @PreAuthorize("#oauth2.hasScope('read')")
+    @PreAuthorize("#oauth2.hasScope('toll_read') and hasAuthority('ROLE_OPERATOR')")
+    @ResponseBody
     public String getData() {
         Map<String, String> data = new HashMap<>();
 

@@ -17,3 +17,5 @@
 *.ipr
 
 .DS_Store
+
+classes/
