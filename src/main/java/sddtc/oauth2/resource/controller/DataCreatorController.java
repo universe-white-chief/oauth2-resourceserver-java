@@ -18,7 +18,7 @@ public class DataCreatorController {
     private Gson gson = new Gson();
 
     @RequestMapping("/data")
-    @PreAuthorize("#oauth2.hasScope('toll_read') and hasAuthority('ROLE_OPERATOR1')")
+    @PreAuthorize("#oauth2.hasScope('toll_read') and hasAuthority('ROLE_hello')")
     @ResponseBody
     public String getData() {
         Map<String, String> data = new HashMap<>();
